@@ -18,8 +18,12 @@ reverse_morse = {'.-': 'A', '-...': 'B', '-.-.': 'C', '-..': 'D',
                  '-.--': 'Y', '--..': 'Z'}
 
 
-def encode_to_morse(text):  # "sos sos" => "... --- ...  ... --- ..."
-    return text
+def encode_to_morse(text):  # "sos sos" => "... --- ... ... --- ..."
+    for i in text.upper():
+        if i == ' ':
+            print('    ', end='')
+        else:
+            print(morse[i], end=' ')
 
 
 def decode_from_morse(code):  # "... --- ...  ... --- ..." => "sos sos"
